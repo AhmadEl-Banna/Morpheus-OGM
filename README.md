@@ -28,13 +28,16 @@ morpheus.Node("Person",{
   friends:Relation("friend_with")
 });
 
-//returns Queryable start than can be chained later "MATCH (n:`Person`) RETURN n"
+//returns Queryable start than can be chained later 
+//"MATCH (n:`Person`) RETURN n"
 var people = morpheus.Cypher("Person");
 var friends = morpheus.Cypher("friend_with")
 
 people.limit(25);
 
-people.where("name").isLike(search).fetchRelation("frinds",friends.where("since").isBefore(someDate).isAfter(anotherDate))
+people.where("name").isLike(search)
+.fetchRelation("frinds",
+friends.where("since").isBefore(someDate).isAfter(anotherDate))
 .run(function(err,data){
   
 });
