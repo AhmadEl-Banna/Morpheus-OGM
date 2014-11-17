@@ -11,7 +11,7 @@ what it should look like:
 the main idea is an api to provide schema and relationships schema ,and a chained functions to query and save data.
 
 Sample:
-
+```js
 var morpheus = require("morpheus-ogm");
 
 morpheus.Node("friend_with",{
@@ -36,11 +36,11 @@ var friends = morpheus.Cypher("friend_with")
 people.limit(25);
 
 people.where("name").isLike(search)
-.fetchRelation("frinds",
+.fetchRelation("friends",
 friends.where("since").isBefore(someDate).isAfter(anotherDate))
 .run(function(err,data){
   
 });
-
+```
 something like that 
 please support me with feed back
