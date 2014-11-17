@@ -11,7 +11,7 @@ what it should look like:
 the main idea is an api to provide schema and relationships schema ,and a chained functions to query and save data.
 
 Sample:
-```js
+``` javascript
 var morpheus = require("morpheus-ogm");
 
 morpheus.Node("friend_with",{
